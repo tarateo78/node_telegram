@@ -12,6 +12,13 @@ const onCallback = (app, state) => {
 			return ctx.replyWithMarkdown(`👤 Inserisci un nuovo User...`)
 			
 		}
+		else if (chiamata == 'passChange') {
+			const userId = ctx.update.callback_query.from.id;
+
+			state[userId].command = 'insertPass';
+			return ctx.replyWithMarkdown(`🔑 Inserisci una nuova Pass...`)
+			
+		}
 		else {
 			
 			const subreddit = ctx.update.callback_query.data;

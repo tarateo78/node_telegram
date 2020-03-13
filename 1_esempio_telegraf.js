@@ -1,4 +1,5 @@
 const Telegraf = require('telegraf');
+const mongoose = require('mongoose')
 const {
 	Markup
 } = require('telegraf');
@@ -23,6 +24,9 @@ let state = {};
 app.hears('hi', ctx => {
 	return ctx.reply('Hey!');
 });
+
+// Connect to db
+mongoose.connect(process.env.MONGODB, { useNewUrlParser: true, useUnifiedTopology: true }, () => console.log('Connected to db'))
 
 onCommand(app, state)
 
