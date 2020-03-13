@@ -1,6 +1,7 @@
 
 // const axios = require('axios')
 const { Markup } = require('telegraf');
+const testo = require('./testo.js')
 
 const onCommand = (app, state) => {
 
@@ -22,6 +23,21 @@ const onCommand = (app, state) => {
 		}
 	});
 
+	app.command('start', ctx => {
+		ctx.replyWithMarkdown(testo.startText)
+	})
+
+
+	app.command('credits', ctx => {
+		ctx.replyWithMarkdown(`🤖 Creato da @matteotarabini`)
+	})
+
+
+	app.command('help', ctx => {
+		ctx.replyWithMarkdown(testo.helpText, {
+				parse_mode: 'Html'
+		})
+	})
 
 	app.command('top', ctx => {
 		const userId = ctx.message.from.id;
