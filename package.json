@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/tarateo78/node_telegram#readme",
   "dependencies": {
-    "dotenv": "^8.2.0"
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "telegraf": "^3.36.0",
+    "telegraf-inline-menu": "^4.0.0"
   }
 }
